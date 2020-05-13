@@ -1,0 +1,537 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title></title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.701961); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid-page; break-before: avoid-page; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid-page; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); background-position: initial initial; background-repeat: initial initial; }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    padding-bottom: .3em;
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+   padding-bottom: .3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export' >
+<div  id='write'  class = 'is-mac'><h2><a name="大连市旅游发展建议调查报告" class="md-header-anchor"></a><strong><span>大连市旅游发展建议调查报告</span></strong></h2><p><span>作为东北地区出海的最佳通道，大连市极佳的地理位置造就了大连市较强的区位优势。改革开放以来，大连市作为首批14个沿海开放城市之一，不断发挥自身优势，在经济上取得了长足发展。2019年，大连市地区生产总值7001.7亿元。其中，以旅游业为代表的服务业贡献巨大，已成为拉动大连市经济发展的强大引擎。</span></p><p><strong><span>1</span></strong><span> </span><strong><span>大连市旅游业的发展现状及特点</span></strong></p><p><span>改革开放以来，随着我国经济的快速发展，人民生活水平的不断提高，消费能力逐步增强，我国旅游业取得了长足的进步，旅游消费观念已深入人心。而大连市作为我国东部沿海的重要港口城市，经济发展位于全国前列，旅游业也相应地取得了较快发展，呈现出鲜明的特点，具体体现在区位优势明显，旅游资源丰富。 大连市地处东北，背靠东北平原，面朝黄渤海，是东北地区最为重要的出海通道。辖区内拥有大连港、旅顺港码头，哈大高铁，交通便利，为中外游客往来大连创造了极为有利的交通条件。海洋资源丰富，海产品品种众多。市郊多丘陵喀斯特地貌，有千山余脉贯穿全市，植被茂盛，具有良好的生态环境资源。</span></p><p><strong><span>2</span></strong><span> </span><strong><span>全域旅游发展</span></strong></p><p><span>全域旅游是旅游业发展的一种新形态、新理念、新模式，也是世界旅游发展的共同规律和总体趋势，代表着现代旅游发展的新方向。加快推进全域旅游发展，对大连市推动经济发展方式转变，实现转型跨越发展具有重大意义。全域旅游自正式提出以来，一直得到各界关注。目前国内对全域旅游的理论研究和实践探索尚处于起步阶段，需要进一步总结、提炼和完善。分析大连市全域旅游发展背景和优势，阐述了大连市全域旅游发展现状，总结了大连市全域旅游发展需引起关注的问题，为科学务实做好大连市全域旅游示范区创建和大连市全域旅游更好更快发展，提出了相应的对策建议。</span></p><p><span>“千山万水”成为大连全域旅游发展资源结构本底大连有著名的海滨旅游资源,有金石滩、旅顺、星海湾等近5000里海岸线分布,“万水”支撑起全域化滨海旅游的主体。大连山水旅游资源丰富,冰峪沟、骆驼山、小黑山、鸡冠山、葡萄沟等旅游景点多沿长白山余脉千山山脉分布。“千山万水”构成全域旅游资源结构本底。大连有丰富的中国近代人文历史旅游资源,比如:旅顺的博物馆、关东军司令部旧址等。大连主题公园特色好,有极地海洋动物馆、发现王国、东沟五坊、安波温泉滑雪场、蓝莓种植基地等。大连每年举办特色旅游节庆活动,如大连赏槐会、大连櫻花节、中国国际啤酒节、大连沙滩文化节、大连国际服装节、大连国际徒步大会、中国国际马拉松邀请赛、樱桃节、蓝莓节温泉滑雪节等,计30余个。</span></p><p><span>区位条件优越为大连全域旅游发展提供强有力支撑大连北倚东北三省及内蒙古东部广阔腹地,整体与日本、韩国、朝鲜、俄罗斯远东地区相邻。大连旅游资源不仅对腹地有吸引力,对日、韩、朝及俄也具有一定市场引力。目前大连区域内部旅游交通已形成以快速路网为骨架、以城市捷运系统为支撑的体系。大连位于东北亚经济图与环渤黄经济圈的重要结合部,是环渤海经济重要核心城市之ー。近年来,大连已成为东北区域经济的“领跑者”。大连优越的区位条件加上雄厚的经济实力,为全域旅游发展提供了强有力的支撑。</span></p><p><span>大连市全域旅游发展对策建议根据大连全域旅游发展中存在的问题,为科学务实做好大连全域旅游示范区创建和大连全域旅游更好更快发展,提出以下几方面的对策与建议。</span></p><p><strong><span>2.1加强顶层设计,高标准做好全域旅游规划。</span></strong></p><p><span>切实从全域旅游发展的角度出发,科学分析研究与把握大连市旅游资源和特色产品,按照全域布局、全景覆盖、全局联动、全面保障、全业融合、全民参与的全域旅游格局要求,编制大连全域旅游规划、区域全域旅游规划,进一步明确区域发展方向、重点以及特色,明确实施步骤。推进大连全域旅游规划与国民经济社会发展规划、城乡建设规划、土地利用规划、生态环境保护规划及其他专项规划的有效衔接,推进以大连全域旅游规划为引领的多规融合,使大连全域旅游规划成为整合各方资源、资金和力量的重要抓手。推进大连全域旅游规刘管理创新,统筹各种旅游规划和相关规划。</span></p><p><strong><span>2.2创建全域旅游示范区重点做到五个“全”。</span></strong></p><p><span>第一,全区域布局。编制(范区全域旅游中长期规划》,合理统筹规划布局,实现全域旅游全覆盖。第二,全景化打造。把大连作为大景区来规划和布局,以旅游业的发展带动城市功能的提升。第三,全资源统筹。有机整合全市旅游资源严格资源开发利用,突出旅游特性和旅游功能。第四全领域融合。推进产业的融合催化,积极发展旅游+文体业、+休闲农业、+生态林业、+健康养生等,从“围景建区、设门收票”向“区景一体、产业一体”转变,实现产业链条全域化,产业形态全业化产业空间全时化,全面提升旅游综合效益。第五,全社会参与。全面推进城乡一体化进程,引导全区域人民特别是农民积极参与,结合新农村、美丽乡村建设来推动全域旅游发展。在实践中,要注重对大连市全域旅游发展进行全面系统研究,认真总结示范区发展模式和经验,形成相关理论。推动建立大连全域旅游监测研究基地,构建大连全域旅游发展协同创新联盟</span></p><p><strong><span>3</span></strong><span> </span><strong><span>海滨旅游</span></strong></p><p><span>围绕更新品牌形象，着力打造城市新名片这一中心点，开发丰富旅游淡季的旅游资源；完善乡村游，自然景观旅游等项目，规范管理，提升景区质量等三个方面的对策建议，对大连市旅游业未来的发展具有一定的指引作用。</span></p><p><span>大连旅游业的发展，得益于海滨旅游的发展。但与国内外知名海滨旅游城市相比，大连在发展海滨旅游方面存在着不少差距。本文通过介绍大连海滨旅游发展现状的基础上，分析大连海滨旅游发展当中存在问题，并提出大连进一步搞好海滨旅游的几点建议。</span>
+<span> 　海滨旅游是一种以休闲度假为主体的综合性旅游活动，具有形式丰富多彩，集知识性、娱乐性、参与性于一体等特点。海滨旅游对促进沿海国家和地区的经济发挥着日益重要的作用。联合国《21世纪议程》中明确指出：&quot;沿海国家应当探讨扩大依靠海洋资源开发消遣和旅游活动的潜力&quot;。</span>
+<span> 大连作为辽宁省沿海经济发展的龙头、是我国著名的海滨旅游城市。大连拥有东北地区最佳海滨旅游景观，大连以海滨旅游促发展，能有效带动辽东半岛经济的发展，进而带动整个区域产业链条的发展。但是大连和国内外一些知名海滨旅游城市相比存在着明显的差距。在大连海滨旅游发展现状的基础上，分析了大连海滨旅游发展过程中不足之处，并提出相应的发展建议，以期为大连海滨旅游的进一步发展提供借鉴。</span>
+<span> 　</span><strong><span>3.1 大连海滨旅游发展概况</span>
+</strong><span> 　大连位于辽东半岛南端，与山东半岛隔海相望，地处暖温带，是具有海洋性特点的暖温带大陆性季风气候，冬无严寒，夏无酷暑，年平均气温在10℃左右，气候舒适宜人，尤其到了夏季，大连成了令人向往的避暑胜地。</span>
+<span> 　</span><strong><span>（一）大连海滨旅游资源特点</span>
+</strong><span> 　大连海滨资源类型齐全，水、湾、滩、岛、石、崖、林构成了大连滨海旅游的魅力所在。大连拥有长达1906公里的海岸线和170个大小岛屿，目前大连的海滨景区（景点）多达100多处。海滨旅游资源是大连旅游资源的主体。作为海滨城市，大连的许多公园、广场、景区景点都建在了海边。目前，大连基本上形成了以经济开发区（金石滩）-大连市区-旅顺口区为基础，围绕渤海及黄海2条海滨带进行带状铺张式开发的形势，开发出了诸如金石滩、老虎滩海洋公园、棒棰岛、圣亚海洋世界等比较知名的海滨旅游度假景区和景点，黄渤海海滨带上诸多的沙滩浴场更是形成了大连海滨旅游的强大基础优势。</span>
+<span> 　</span><strong><span>（二）大连海滨旅游发展现状</span>
+</strong><span> 　大连因其拥有风光秀丽的海滨旅游资源，因而旅游业取得了较快的发展。2017年，大连市共接待游客8517.9万人次，同比增长10.08%；旅游总收入1280亿元，同比增长12.8%。入境过夜海外游客107.9万人次，同比增长3.35%；外汇收入5.59亿美元，同比增长3.6%。从某种程度上讲，旅游者选择大连作为旅游目的地，其主要原因在于大连拥有美丽的大海，海构成了大连的核心旅游资源，是大连旅游的主题。</span>
+<span> 　</span><strong><span>3.2  大连海滨旅游发展存在的主要问题</span></strong><span>　　</span></p><p><strong><span>（一）突出的季节性供求矛盾</span>
+</strong><span> 　对于大部分游客来说，大连最大的吸引点是海滨，以夏季避暑为最大吸引点。大连旅游的旺季主要集中于5-10月，其他月份则基本处于淡季。每年夏季大连海滩浴场游客人满为患，其中以星海公园、夏家河子、傅家庄等老牌海水浴场为甚。到了秋冬季，很少有游客会考虑前往大连旅游。</span></p><p><strong><span>（二）海滨旅游环境污染严重</span>
+</strong><span> 　在大连海滨旅游开发过程中，许多项目开发未经详细论证，一些不适当的工程，破坏了大连海滨风光和海滨环境。加上大量的工、农业废水、城乡生活污水排入近海。大连附近海域的污染已相当严重。大连海滨生态环境形势严峻，这在无形中损害了大连海滨旅游的声誉。此外，旅游旺季大连海滨旅游区旅游容量超载问题也十分突出，部分游人的不文明行为，加重了大连的环境污染。</span>
+<span> 　</span><strong><span>（三）海滨旅游产品特色不突出，缺乏创新</span>
+</strong><span> 　大连虽然拥有漫长的海岸线，占了辽宁省海岸线总长度的73﹪，但得天独厚的海滨旅游资源并未得到充分开发利用。并且大连海滨旅游的开发并没有真正体现大连海作为北方海的与众不同之处。南方的海，多数人首先想到的是海南三亚。但若提起北方的海，多数人也许首先想到的是北戴河, 大连海滨旅游资源和产品的开发一直未能形成独特的品牌和特色,尤其是大连北三市及其他较偏远的地区,多为粗放式的开发，海滨旅游接待设施缺乏创意设计,许多旅游景点出现了盲目、粗放式的开发，只重形式，模仿抄袭现象比较严重。</span>
+<span> 　</span><strong><span>(四)缺乏文化内涵，游客参与度不高</span></strong>
+<span> 　大连建城历史只有100多年，缺乏闻名中外的名胜古迹，文化建设上也不突出，目前还没有形成一定特色的大连海滨旅游文化，对海滨旅游产品的知识性、文化性融入不够。一些海滨旅游开发者只图一时的经济效应, 并未对海滨旅游资源的文化内涵进行挖掘。目前大连虽然建设了一批具有影响力的旅游项目，如老虎滩海洋公园、海滨浴场、金石滩景区等，但它们展示给游客的仅仅是美丽的海滨自然风光，并未包含海滨旅游景观背后的深层文化内涵和历史故事。大连海滨旅游产品基本还是停留在观光、游览的层次，缺乏独具特色的及深层次的、有较高档次的海滨旅游产品的开发，海滨旅游产品结构单一，游客能够参与和体验的海滨旅游活动并不多。例如，极地馆、圣亚海洋世界虽具有一定的知名度，但景观相似性较强，各个景点景区的开发都在观光游览层面上，对游客难以形成强大的吸引力。</span>
+<span> 　</span><strong><span>（五）海滨旅游产品缺乏带动性</span></strong>
+<span> 　目前，大连市区附近海滨旅游发展强劲，而周边县区的甘井子区西海岸、旅顺口区西北部、瓦房店海滨、庄河的东南部海滨旅游却发展缓慢[3]，这说明大连缺乏对区域分工合作、统筹发展的应有考虑。在旅游方面合作的少，竞争的多，以致出现各景区（点）各自为战的局面，相互之间争抢客源，恶性竞争导致大连海滨旅游业处于一种发展不平衡的状态。</span>
+<span> 　</span><strong><span>3.3 大连发展海滨旅游的建议</span></strong>
+<span> 　</span><strong><span>（一）克服淡季带来的不利影响</span>
+</strong><span> 　大连海滨旅游淡旺季的矛盾，是大连海滨发展旅游的难点，但同时是获得较大的发展后劲的潜力所在，更是提高全行业经济效益的关键。在充分了解游客需求的基础上，针对不同的客源细分市场，开发和设计冬季专项旅游产品和开展丰富多彩的活动。如举办冬泳节、滑雪节等活动，也可举行各种交易会、洽谈会、展览会、学术交流会等，以使冬季来大连的游客也络绎不绝；大连可利用其丰富的温泉资源优势，深入挖掘大连温泉体验游。往往越是在旅游处于淡季时，温泉旅游的优势就越明显，吸引力越强；大连要抓住辽宁省沿海经济带有利时机，扩大区域合作与交流。</span>
+<span> 　</span><strong><span>（二）改善和提高海滨环境质量</span></strong>
+<span> 　应根据海滨旅游资源的状况，加强对大连海滨旅游资源和环境的合理开发和保护，坚持旅游者、环境、海滨旅游资源协调发展的原则。只有对海滨旅游资源进行合理的开发才能带来更多的经济效益、环境效益和社会效益，形成良性循环，从而促进大连海滨旅游业的可持续发展。一方面要努力改善大连海滨环境质量。另一方面要加强对海滨旅游的规划和对海滨旅游环境生态效益的评估，避免对海滨旅游资源的破坏性开发。要加强政府对海滨项目规划开发的审查、监督，调节总量规模。此外，通过加强宣传教育，通过立法，把对海滨旅游环境的保护真正落实到每一个景区景点。旅游管理人员、导游人员及服务者都应经过系统地生态教育，并采用适当的方法对游客的不文明行为予以教育和制止。</span>
+<span> 　</span><strong><span>（三）注重海滨特色旅游产品的开发，注重体验性</span></strong>
+<span> 　特色是旅游的灵魂，本着&quot;人无我有，人有我特&quot;的原则，充分利用丰富的海岛和海洋资源，推出大连海岛特色精品游，开展海洋民俗风情游、海洋夜生活游、海洋体育竞技游等项目。此外，在海滨旅游产品设计中，可将海滨的自然风光和丰富的渔业资源结合起来，设计、开发一些自然的、原始的、参与性强的专项旅游项目，让旅游者尽览海滨风光，过几天渔民日子，或泛舟垂钓，或出海捕捞......。也可利用大连众多的海岛、沙滩、浴场设计海滨娱乐体验游，如开展海上垂钓、渔家乐、冲浪、听潮、沙滩跳伞、滑沙、帆船、摩托艇、滑水和水上飞机等旅游项目[5]，同时可运用一些电、声、光等高科技手段，集科技性、趣味性、知识性、娱乐性、刺激性、生态性于一体，以增加游客对海滨旅游活动的参与性，提高游客的海滨旅游体验质量，真正建立起大连的海滨旅游产品品牌特色。</span>
+<span> 　</span><strong><span>（四）深入挖掘海滨旅游文化内涵</span></strong>
+<span> 　发展旅游没有文化的参与不行，旅游需要文化作底蕴。伴随海滨旅游资源的开发，必须加大对人文因素的投入。因为只有赋予海滨旅游产品以丰富的文化内涵，才能使其成为精品，才能获得长久的生命力。因此，大连要积极开发海滨文化旅游产品，丰富其文化内涵，以形成海滨旅游特色产品体系。实际上，大连地区近现代战争遗迹在全国乃至全世界都有较高知名度，大连可依托丰富的历史遗迹，可开发近代海洋战争遗迹类旅游资源。只有经过对大连海滨旅游产品更深层次的文化阐释与包装，才能充实大连海滨旅游内容，使大连的海滨旅游特色鲜明，增加对游客的吸引力，使游客既观赏到了大连美丽的海滨风光，又体验到其海滨丰富的文化内涵。</span>
+<span> 　</span><strong><span>（五）加强区域旅游分工与合作</span></strong>
+<span> 　辽宁沿海经济带的提出，为大连区域旅游合作提供了难得的机遇和重要平台。大连应抓住机遇，强化区域分工与合作，改变各自为战的局面，树立起大局意识和整体观念，加强本市各区之间，省内各区之间，沿海地区与内地之间，东北亚大旅游区之间的区域旅游分工与合作，要突出大连作为北方海滨旅游城市的特色，整合优势海滨旅游资源和产品，形成优势互补，以实现共同发展。</span></p><p><strong><span>4</span></strong><span> </span><strong><span>总结</span></strong></p><p><span>进入新的发展时期,必须贯彻落实新的发展理念,转变旅游发展思路,变革旅游发展模式,创新旅游发展战略,加快旅游发展阶段演进,推动大连市旅游从“景点旅游”向“全域旅游”转变。具体实现以下六个转变是从单一景点景区建设管理到综合目的地统筹发展转变,拆除景点景区管理围墙,实现多规合一,推进公共服务一体化,旅游监管全覆盖,实现产品营销与目的地推广的有效结合。二是从门票经济向产业经济转变,实行分类改革,公益性景区要实行低价或免费开放,改变大连市旅游过度依赖门票收入的局面。三是从粗放低效旅游向精细高效旅游转变,加大供给侧结构性改革,增加有效供给,引导旅游需求,实现旅游供求的积极平衡。四是从封闭的旅游自循环向开放的“旅游”融合发展方式转变,加大旅游与农业、林业、工业、商贸、金融、文化、体育、医药等产业的融合力度,形成综合新产能。五是从旅游企业单打独享到社会共建共享转变,充分调动发展旅游的积极性,以旅游为导向整合资源,强化企业社会责任,推动建立旅游发展共建共享机制。六是从部门行为向党政统筹推进转变,形成综合产业综合抓的局面。最实现从小旅游格局向大旅游格局转变。总之,推进大连市全域旅游和海滨旅游是一场具有深远意义的变革,是新时期大连市旅游发展的总体战略。</span></p><p><span> </span></p></div>
+</body>
+</html>
